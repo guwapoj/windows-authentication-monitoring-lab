@@ -20,10 +20,12 @@ Generated EventCode 4625 (LogonType 2)
 ## Remote Authentication Attempt (Kali → Windows)
 
 smbclient -L //192.168.56.102 -U wisdom%wrongpass
-Generated:
+
+\\ Generated:
 -EventCode 4625
 -LogonType 3
 -Source IP: 192.168.56.101
+
 ![kali](labscreenshots/kali_auth_attempt.png)
 
 
@@ -32,13 +34,13 @@ Failed Login Detection
 ![eventcode](labscreenshots/event_code_4625.png)
 EventCode=4625
 
-Brute Force Detection Logic
+## Brute Force Detection Logic
 EventCode=4625 LogonType=3
 | stats count by aIpAddress
 | where count > 5
 ![eventcode](labscreenshots/brute_force.png)
 
-Kali IP address detected:
+## Kali IP address detected:
 ![eventcode](labscreenshots/kali_ip.png)
 
 Account Lockout Detection
