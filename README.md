@@ -48,6 +48,15 @@ EventCode=4740
 ![eventcode](labscreenshots/user_locked_out.png)
 ![eventcode](labscreenshots/lockout_code.png)
 
+## Alert Configuration
+Configured Splunk alert:
+Trigger: Results > 0
+Time Range: Last 15 minutes
+Schedule: Every 15 minutes
+
+![eventcode](labscreenshots/alert_config.png)
+
+
 ## Dashboard Monitoring
 Created authentication monitoring dashboard showing login spikes and source IP activity.
 Authentication monitoring dashboard
