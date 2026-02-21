@@ -44,7 +44,9 @@ EventCode=4625 LogonType=3
 ![eventcode](labscreenshots/kali_ip.png)
 
 ## Account Lockout Detection
-EventCode=4740
+- EventCode=4740
+
+
 ![eventcode](labscreenshots/user_locked_out.png)
 ![eventcode](labscreenshots/lockout_code.png)
 
