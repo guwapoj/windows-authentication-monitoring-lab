@@ -61,8 +61,8 @@ Schedule: Every 15 minutes
 
 
 ## Dashboard Monitoring
-Created authentication monitoring dashboard showing login spikes and source IP activity.
-Authentication monitoring dashboard
+- Created authentication monitoring dashboard showing login spikes and source IP activity.
+
 ![eventcode](labscreenshots/monitor_dashboard.png)
 
 
