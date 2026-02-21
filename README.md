@@ -43,7 +43,7 @@ EventCode=4625 LogonType=3
 ## Kali IP address detected:
 ![eventcode](labscreenshots/kali_ip.png)
 
-Account Lockout Detection
+## Account Lockout Detection
 EventCode=4740
 ![eventcode](labscreenshots/user_locked_out.png)
 ![eventcode](labscreenshots/lockout_code.png)
