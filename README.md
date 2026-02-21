@@ -1,7 +1,6 @@
 # windows-authentication-monitoring-lab
 
-Main objective of this project is to simulate authentication attacks against a Windows system and detect them using Splunk SIEM.
-
+This project simulates authentication-based attacks against a Windows system and demonstrates detection and monitoring using Splunk SIEM.
 
 ## Lab Architecture
 - Host: Windows 11
@@ -35,9 +34,11 @@ Main objective of this project is to simulate authentication attacks against a W
 - EventCode=4625
 
 ## Brute Force Detection Logic
-- EventCode=4625 LogonType=3
+```spl
+EventCode=4625 LogonType=3
 | stats count by aIpAddress
 | where count > 5
+```
 
 ![eventcode](labscreenshots/brute_force.png)
 
