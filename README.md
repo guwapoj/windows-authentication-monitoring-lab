@@ -1,4 +1,4 @@
-# windows-authentication-monitoring-lab
+# Windows-authentication-monitoring-lab
 
 This project simulates authentication-based attacks against a Windows system and demonstrates detection and monitoring using Splunk SIEM.
 
