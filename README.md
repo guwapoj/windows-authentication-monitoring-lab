@@ -10,6 +10,27 @@ This project simulates authentication-based attacks against a Windows system and
 - Splunk Enterprise (SIEM)
 - Host-Only Network (192.168.56.0/24)
 
+## Log Collection & Ingestion Configuration
+
+- Splunk was configured to ingest Windows Security Event Logs from the target Windows VM.
+- Using local event log collection, Splunk monitored:
+```spl
+WinEventLog:Security
+```
+Windows authentication activity generates Security Event Logs such as:
+- EventCode 4625 → Failed logon attempt
+- EventCode 4624 → Successful logon
+- EventCode 4740 → Account lockout
+
+When authentication attempts occurred (both local and remote), Windows recorded these events in the Security log. Splunk indexed these events and made them searchable using SPL queries.
+
+This ingestion configuration enabled:
+- Detection of local failed login attempts
+- Detection of remote network authentication attempts from Kali Linux
+- Identification of attacker source IP addresses
+- Automated brute-force detection alerting
+- Account lockout monitoring
+
 ## Attack Simulation - Local Failed Login
 - Entered incorrect password multiple times
 - Generated:
