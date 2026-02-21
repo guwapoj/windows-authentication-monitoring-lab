@@ -66,27 +66,13 @@ Schedule: Every 15 minutes
 ![eventcode](labscreenshots/monitor_dashboard.png)
 
 
- MITRE ATT&CK Mapping
+## MITRE ATT&CK Mapping
 
-T1110 – Brute Force
-
-T1046 – Network Service Discovery
-
-Skills Demonstrated
-
-SIEM configuration (Splunk)
-
-Windows Event Log ingestion
-
-Authentication monitoring
-
-Detection engineering (SPL)
-
-Alert automation
-
-Virtual lab environment setu
-
-
+| Tactic                 | Technique                 | ID     | Description                              |
+|------------------------|--------------------------|--------|------------------------------------------|
+| Credential Access      | Brute Force              | T1110  | Repeated failed authentication attempts  |
+| Discovery              | Network Service Discovery| T1046  | Nmap scanning from Kali                  |
+| Discovery              | Network Share Discovery  | T1135  | SMB enumeration attempts                 |
 
 
 
