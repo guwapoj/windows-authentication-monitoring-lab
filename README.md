@@ -21,9 +21,11 @@ This project simulates authentication-based attacks against a Windows system and
 - smbclient -L //192.168.56.102 -U wisdom%wrongpass
 
 - Generated:
-- EventCode 4625
-- LogonType 3
-- Source IP: 192.168.56.101
+```spl
+EventCode=4625 LogonType=3
+| stats count by aIpAddress
+| sort - count
+```
 
 ![kali](labscreenshots/kali_auth_attempt.png)
 
@@ -31,7 +33,9 @@ This project simulates authentication-based attacks against a Windows system and
 ## Log Detection in Splunk
 - Failed Login Detection
 ![eventcode](labscreenshots/event_code_4625.png)
-- EventCode=4625
+```spl
+EventCode=4625
+```
 
 ## Brute Force Detection Logic
 ```spl
@@ -46,8 +50,9 @@ EventCode=4625 LogonType=3
 ![eventcode](labscreenshots/kali_ip.png)
 
 ## Account Lockout Detection
-- EventCode=4740
-
+```spl
+EventCode=4740
+```
 
 ![eventcode](labscreenshots/user_locked_out.png)
 ![eventcode](labscreenshots/lockout_code.png)
@@ -67,6 +72,13 @@ Schedule: Every 15 minutes
 ![eventcode](labscreenshots/monitor_dashboard.png)
 
 
+## Key Findings
+
+- Successfully detected both local and remote failed authentication attempts.
+- Identified attacker source IP (192.168.56.101).
+- Triggered and monitored account lockout events (EventCode 4740).
+- Implemented automated brute-force detection alert.
+
 ## MITRE ATT&CK Mapping
 
 | Tactic                 | Technique                 | ID     | Description                              |
@@ -76,7 +88,15 @@ Schedule: Every 15 minutes
 | Discovery              | Network Share Discovery  | T1135  | SMB enumeration attempts                 |
 
 
+## Skills Demonstrated
 
+- SIEM configuration (Splunk Enterprise)
+- Windows Event Log ingestion
+- Authentication monitoring
+- Detection engineering using SPL
+- Brute-force attack identification
+- Alert automation
+- SOC-style investigation workflow
 
 
 
