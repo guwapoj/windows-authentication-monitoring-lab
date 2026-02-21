@@ -12,7 +12,11 @@ This project simulates authentication-based attacks against a Windows system and
 
 ## Attack Simulation - Local Failed Login
 - Entered incorrect password multiple times
-- Generated EventCode 4625 (LogonType 2)
+- Generated:
+```spl
+EventCode=4625
+| stats count by LogonType
+```
 ![incorrectpass](labscreenshots/incorrect_pass_wind.png)
 
 
