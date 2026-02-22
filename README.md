@@ -45,7 +45,7 @@ This project simulates authentication-based attacks against a Windows system and
                                │ - Detection Rules  │
                                │ - Alerting         │
                                │ - Dashboard        │
-                               └────────────────────┘```
+                               └────────────────────┘
 ```
 
 ## Log Collection & Ingestion Configuration
