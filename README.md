@@ -10,6 +10,43 @@ This project simulates authentication-based attacks against a Windows system and
 - Splunk Enterprise (SIEM)
 - Host-Only Network (192.168.56.0/24)
 
+```spl
+                ┌─────────────────────────────┐
+                │        Host Machine         │
+                │        Windows 11           │
+                └──────────────┬──────────────┘
+                               │
+                               │ VirtualBox
+                               ▼
+        ┌─────────────────────────────────────────────┐
+        │            Host-Only Network                │
+        │              192.168.56.0/24                │
+        └─────────────────────────────────────────────┘
+                 │                          │
+                 ▼                          ▼
+     ┌───────────────────┐        ┌────────────────────┐
+     │   Kali Linux VM   │        │   Windows 10 VM    │
+     │  (192.168.56.101)  │        │  (192.168.56.102)  │
+     │                   │        │                    │
+     │  - SMB Attempts   │        │  - Security Logs   │
+     │  - Brute Force    │        │  - Event ID 4625   │
+     └──────────┬────────┘        │  - Event ID 4740   │
+                │                 └─────────┬──────────┘
+                │                           │
+                │  Authentication Attempts  │
+                └──────────────────────────►│
+                                            │
+                                            ▼
+                               ┌────────────────────┐
+                               │  Splunk Enterprise │
+                               │  (SIEM Platform)   │
+                               │                    │
+                               │ - Log Ingestion    │
+                               │ - Detection Rules  │
+                               │ - Alerting         │
+                               │ - Dashboard        │
+                               └────────────────────┘```
+
 ## Log Collection & Ingestion Configuration
 
 - Splunk was configured to ingest Windows Security Event Logs from the target Windows VM.
